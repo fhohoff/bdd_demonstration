@@ -1,0 +1,29 @@
+<h1>Sozialversicherungsbeitrags-Rechner</h1>
+<%= link_to "Einstellungen", social_insurances_path %>
+
+<p>Hier können die Sozialversicherungsbeiträge berechnet werden</p>
+
+<%=  form_tag output_path do  %>
+    <fieldset id="personal">
+      <legend>Bitte füllen Sie folgende Daten aus:</legend>
+        <div class="field">
+          <%= label_tag :gross_salary, "Brutto-Einkommen" %>
+          <%= text_field_tag(:gross_salary, '', :size => 7) %>
+        </div>
+        <br />
+        <div class="field">
+          <%= label_tag :have_children, "eigene Kinder?" %>
+          <%= check_box_tag :have_children %>
+        </div>
+        <br />
+        <div class="field">
+          <%= label_tag :age, "Alter" %>
+          <%= text_field_tag(:age, '' ,:size => 2) %>
+        </div>
+        <br />
+
+        <p>
+            <%= submit_tag "Berechne...", class: "submit" %>
+        </p>
+    </fieldset>
+<% end %>

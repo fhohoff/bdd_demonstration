@@ -1,0 +1,37 @@
+// Place all the styles related to the Calculator controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#calculator{
+  fieldset{
+    width: 30em;
+  }
+
+  legend{
+    font-weight:bold;
+  }
+
+  .field {
+    width: 20em;
+    margin-top: 1.5em;
+  }
+
+  label {
+    float: left;
+    width: 10em;
+  }
+
+  #have_children {
+    float:left;
+    width: 20em;
+    margin-left: 1.2em;
+  }
+
+  input {
+    float: right;
+    width: 8em;
+  }
+
+  .submit {
+    float:left;
+  }
+}

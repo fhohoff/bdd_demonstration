@@ -1,0 +1,20 @@
+<h1>Sozialversicherungsbeiträge</h1>
+<p id="notice"><%= notice %></p>
+<table width="300px">
+  <tr>
+    <th width="210px">Versicherung</th>
+    <th width="60px">Prozentsatz</th>
+    <th width="30px"></th>
+  </tr>
+
+<% @social_insurances.each do |social_insurance| %>
+  <tr>
+    <td><%= social_insurance.label %></td>
+    <td><%= social_insurance.percentage %></td>
+    <td><div class="actions"><%= link_to "edit", edit_social_insurance_path(social_insurance.id), remote: true %></div></td>
+  </tr>
+      <tr><td colspan="3"><div id="box<%= social_insurance.id %>"></div></td></tr>
+      <% end %>
+</table>
+    <%= link_to "Rechner", input_path %>
+<br />

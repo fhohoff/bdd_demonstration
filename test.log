@@ -1,0 +1,59 @@
+Using the default profile...
+Feature: Calculate social insurance contributions
+  
+  As a Employee
+  I want to calculate my social insurance contributions based on my gross salary
+  So that I can make plans with my net salary
+
+  Scenario Outline: calculate social insurance contributions # features/social_insurance_calculator.feature:7
+    Given I am "<years>" old                                 # features/social_insurance_calculator.feature:8
+    And I have "<children>" child / children                 # features/social_insurance_calculator.feature:9
+    When I have "<gross_salary>" gross salary                # features/social_insurance_calculator.feature:10
+    Then the outcome should be "<total_contributions>"       # features/social_insurance_calculator.feature:11
+
+    Scenarios: No additional nursing care insurance contribution
+      | gross_salary | years | children | total_contributions |
+      | 3000         | 22    | 0        | 614.25              |
+      Undefined step: "I am "22" old" (Cucumber::Undefined)
+      features/social_insurance_calculator.feature:8:in `Given I am "<years>" old'
+      | 3500         | 23    | 1        | 716.63              |
+      Undefined step: "I am "23" old" (Cucumber::Undefined)
+      features/social_insurance_calculator.feature:8:in `Given I am "<years>" old'
+      | 4000         | 25    | 1        | 819.00              |
+      Undefined step: "I am "25" old" (Cucumber::Undefined)
+      features/social_insurance_calculator.feature:8:in `Given I am "<years>" old'
+
+    Scenarios: Additional nursing care insurance contribution
+      | gross_salary | years | children | total_contributions |
+      | 3000         | 23    | 0        | 621.75              |
+      Undefined step: "I am "23" old" (Cucumber::Undefined)
+      features/social_insurance_calculator.feature:8:in `Given I am "<years>" old'
+      | 3500         | 23    | 0        | 725.38              |
+      Undefined step: "I am "23" old" (Cucumber::Undefined)
+      features/social_insurance_calculator.feature:8:in `Given I am "<years>" old'
+      | 4000         | 25    | 0        | 829.00              |
+      Undefined step: "I am "25" old" (Cucumber::Undefined)
+      features/social_insurance_calculator.feature:8:in `Given I am "<years>" old'
+
+6 scenarios (6 undefined)
+24 steps (24 undefined)
+0m0.545s
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given /^I am "(.*?)" old$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given /^I have "(.*?)" child \/ children$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I have "(.*?)" gross salary$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^the outcome should be "(.*?)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+

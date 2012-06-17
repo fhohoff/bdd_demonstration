@@ -1,0 +1,11 @@
+if($('#box<%= params[:id] %>').hasClass('active') == true) {
+        $('#box<%= params[:id] %>').hide();
+        $('#box<%= params[:id] %>').removeClass('active');
+}
+else {
+    $('#box<%= params[:id] %>').html('<%= j render 'form' %>');
+    $('.active').hide();
+    $('.active').removeClass('active');
+        $('#box<%= params[:id] %>').show();
+        $('#box<%= params[:id] %>').addClass('active');
+}

@@ -1,0 +1,2 @@
+module SocialInsurancesHelper
+end

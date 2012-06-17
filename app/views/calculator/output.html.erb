@@ -1,0 +1,46 @@
+<h1>Sozialversicherungsbeitrags-Rechner</h1>
+
+
+Das Bruttogehalt beträgt:<%= number_to_currency(@gross_salary) %><br>
+
+<p><%= @info %></p>
+<p>Die Sozialversicherungsbeiträge betragen: </p>
+
+
+
+<table>
+  <tr>
+    <th>Versicherung</th>
+    <th>Beitrag</th>
+  </tr>
+  <tr>
+    <td>Pflegeversicherung</td>
+    <td><%= number_to_currency(@nursing_care_insurance_contribution) %></td>
+  </tr>
+  <tr>
+    <td>Krankenversicherung</td>
+    <td><%= number_to_currency(@health_insurance_contribution) %></td>
+  </tr>
+  <tr>
+    <td>Rentenversicherung</td>
+    <td><%= number_to_currency(@pension_insurance_contribution) %></td>
+  </tr>
+  <tr>
+    <td>Arbeitslosenversicherung</td>
+    <td><%= number_to_currency(@unemployment_insurance_contribution) %></td>
+  </tr>
+  <tr>
+    <td><b>Gesamt</b></td>
+    <td><%= number_to_currency(@total_insurance_contributions) %></td>
+  </tr>
+
+</table>
+
+  <br>
+Die Sozialversicherungsbeiträge betragen insgesamt: <%= number_to_currency(@total_insurance_contributions) %> <br>
+Die Bruttogehalt abzüglich der Sozialversicherungsbeiträge betragen: <%= number_to_currency(@net_salary) %><br>
+
+   <br>
+<%= link_to "Neue Berechnung",input_path %>
+       <br>
+<%= link_to "Einstellungen", social_insurances_path %>
