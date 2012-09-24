@@ -1,5 +1,5 @@
 This is a demonstration of Behaviour-Driven Development with Rspec and Cucumber.
 
-For further information read our german documentation about bdd in ./docs/
+For further information read our german documentation about bdd in ./doc/Behaviour_Driven_Development.pdf
 
 
